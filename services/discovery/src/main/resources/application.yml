@@ -1,0 +1,5 @@
+spring:
+  config:
+    import: optional:configserver:http://localhost:8888 #check the port number in config server running
+  application:
+    name: discovery-service #create same name file in config server as yml 0r properties

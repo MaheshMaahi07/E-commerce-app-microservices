@@ -1,0 +1,11 @@
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    registerWithEureka: false #because we are creating eureka itself
+    fetchRegistry: false # because we are creating eureka itself
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/ # last / is very important
+
+server:
+  port: 8761
