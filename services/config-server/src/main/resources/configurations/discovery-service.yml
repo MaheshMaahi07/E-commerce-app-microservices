@@ -1,11 +1,59 @@
+#The provided code is a YAML configuration file for a Spring Boot application that uses Eureka,
+#a service discovery and instance management component of the Netflix OSS stack.
+#  This section configures the Eureka instance.
+#  eureka.instance.hostname specifies the hostname of the Eureka instance.
+#In this case, it's set to localhost.
 eureka:
   instance:
     hostname: localhost
+
+#  This section configures the Eureka client.
+#  eureka.client.registerWithEureka specifies whether the client should register itself with Eureka.
+#  In this case, it's set to false, meaning the client won't register itself.
+#  eureka.client.fetchRegistry specifies whether the client should fetch the Eureka registry.
+#  In this case, it's set to false, meaning the client won't fetch the registry.
   client:
     registerWithEureka: false #because we are creating eureka itself
     fetchRegistry: false # because we are creating eureka itself
+#  This section configures the Eureka service URL.
+#  eureka.client.serviceUrl.defaultZone specifies the default zone for the Eureka service URL.
+#  In this case, it's set to http://${eureka.instance.hostname}:${server.port}/eureka/.
+#  The ${eureka.instance.hostname} and ${server.port} placeholders will be replaced with the actual values
+#  from the configuration file.
     serviceUrl:
       defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/ # last / is very important
-
+#  This section configures the server port.
+#  server.port specifies the port number that the server will listen on. In this case, it's set to 8761.
 server:
   port: 8761
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  #Documentation
+#  In Summary
+#  This configuration file sets up a Eureka server that:
+#
+#  Runs on localhost
+#  Doesn't register itself with Eureka
+#  Doesn't fetch the Eureka registry
+#  Uses the http://localhost:8761/eureka/ URL as the default zone for the Eureka service
+#  Listens on port 8761

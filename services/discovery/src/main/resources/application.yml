@@ -1,5 +1,57 @@
+#  The provided code is a YAML configuration file for a Spring Boot application that uses Spring
+#  Cloud Config as a client to fetch configuration data from a remote Config Server.
+
+#  This section configures the Spring Cloud Config client.
+#  spring.config.import specifies the location of the remote Config Server. In this case,
+#it's set to optional:configserver:http://localhost:8888.
+#  The optional keyword indicates that the client will continue to start even if the Config Server
+#is not available.
+#  The configserver keyword specifies the type of configuration source.
+#  The URL http://localhost:8888 is the address of the Config Server.
+
+
 spring:
   config:
     import: optional:configserver:http://localhost:8888 #check the port number in config server running
+#  This section configures the application name.
+#  spring.application.name specifies the name of the application.
+#  In this case, it's set to discovery-service.
   application:
     name: discovery-service #create same name file in config server as yml 0r properties
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    #Documention
+#    In Summary
+#    This configuration file sets up a Spring Boot application that:
+
+#    Uses Spring Cloud Config as a client to fetch configuration data from a remote Config Server.
+#    The remote Config Server is located at http://localhost:8888.
+#    The client will continue to start even if the Config Server is not available.
+#    The application name is discovery-service.
+#    This configuration is typical for a Spring Boot application that uses Spring Cloud Config to fetch
+#    configuration data from a remote Config Server. The optional keyword is useful in development
+#    environments where the Config Server might not be available. The application.name property is used
+#    by Spring Cloud Config to identify the application and fetch the correct configuration data.

@@ -1,12 +1,75 @@
+#  The provided code is a YAML configuration file for a Spring Boot application, specifically a Config
+#  Server
+#This section configures the server's port number. In this case, the server will listen on port 8888.
 server:
-  port: 8888
+  port: 8888 #server run on 8888
+#spring.profiles.active specifies the active profile for the application. In this case, the native profile
+#is activated.
+#The native profile is typically used for testing or development purposes, where the Config Server serves
+#configuration files from the local classpath.
 spring:
   profiles:
-    active: native
+    active: native #specifies the active profile for the application. In this case, the native profile is activated.
+                    #The native profile is typically used for testing or development purposes, where the Config Server serves configuration files from the local classpath.
+  #This section sets the application name to config-server.
   application:
-    name: config-server
+    name: config-server #This section sets the application name to config-server.
+
+  #  This section configures the Spring Cloud Config Server.
+  #  cloud.config.server.native specifies the configuration for the native profile.
+  #  search-locations defines the locations where the Config Server will search for configuration files.
+  #  In this case, it will look for files in the classpath:/configurations directory.
+
   cloud:
     config:
       server:
         native:
-          search-locations: classpath:/configurations
+          search-locations: classpath:/configurations #same name folder has to create # search-locations defines the locations where the Config Server will search for configuration files.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            #    Documentation
+#    This configuration file sets up a Spring Boot Config Server that:
+#
+#    Listens on port 8888
+#    Uses the native profile
+#    Serves configuration files from the local classpath
+#    Searches for configuration files in the classpath:/configurations directory
+
+                                # In this case, it will look for files in the classpath:/configurations directory.

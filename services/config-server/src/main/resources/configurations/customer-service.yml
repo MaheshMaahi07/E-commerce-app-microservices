@@ -1,0 +1,77 @@
+#  The provided code is a YAML configuration file for a Spring Boot
+#  application that uses MongoDB as a database
+#This section configures the server settings for the Spring Boot application. Here's what each part does:
+#
+#server: This is the prefix for server properties.
+#port: This property specifies the port number that the server will listen on.
+#8090: This is the actual port number that the server will use. In this case, the server will listen on port 8090.
+
+server:
+  port: 8090
+
+#  This section configures the MongoDB settings for the Spring Boot application. Here's what each part does:
+#
+#  spring.data.mongodb: This is the prefix for MongoDB properties.
+#  username: This property specifies the username to use when connecting to the MongoDB database.
+#  mahesh: This is the actual username that will be used to connect to the MongoDB database.
+#  password: This property specifies the password to use when connecting to the MongoDB database.
+#  mahesh: This is the actual password that will be used to connect to the MongoDB database.
+#  host: This property specifies the hostname or IP address of the MongoDB server.
+#  localhost: This means that the MongoDB server is running on the same machine as the Spring Boot application.
+#  port: This property specifies the port number that the MongoDB server is listening on.
+#  27017: This is the default port number that MongoDB uses.
+#  database: This property specifies the name of the database to use.
+#  customer: This is the actual name of the database that will be used.
+#  authentication-database: This property specifies the name of the database to use for authentication.
+#  admin: This is the actual name of the database that will be used for authentication.
+
+
+
+
+spring:
+  data:
+    mongodb:
+      username: mahesh
+      password: mahesh
+      host: localhost
+      port: 27017
+      database: customer
+      authentication-database: admin
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#      #documention
+#      How it Works
+#      When the Spring Boot application starts, it will use the configured MongoDB settings to
+#      connect to the database. The application will use the mahesh username and password to authenticate
+#      with the MongoDB server, and it will connect to the customer database on the localhost host at port 27017.
+#      The admin database will be used for authentication.
+#      The server.port property specifies the port number that the server will listen on, which is 8090
+#      in this case.
+#      In summary, this configuration file sets up a Spring Boot application to use MongoDB as a database,
+#      with specific settings for the database connection, authentication, and server port.

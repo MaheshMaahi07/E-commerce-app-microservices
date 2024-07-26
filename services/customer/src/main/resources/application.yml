@@ -1,0 +1,56 @@
+spring:
+  config:
+    import: optional:configserver:http://localhost:8888
+  application:
+    name: customer-service
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#Documentation
+#  This section defines the configuration import strategy for the application.
+#
+#optional: This keyword indicates that the import is optional, meaning that if the configuration source is
+#  not available, the application will still start.
+#configserver: This is the type of configuration source being imported. In this case, it's a Config Server,
+#  which is a centralized configuration management system.
+#http://localhost:8888: This is the URL of the Config Server instance that the application will connect to.
+#  The Config Server is running on localhost at port 8888.
+#  In summary, this section tells the application to import configuration from a Config Server at
+#  http://localhost:8888, but if the Config Server is not available, the application will still start with
+#  default configurations.
+#
+#  spring.application.name
+#  This section defines the name of the Spring Boot application.
+#
+#customer-service: This is the name of the application. In a microservices architecture, this name is often
+#  used to identify the service instance.
+#  In summary, this section sets the application name to customer-service, which can be used for service
+#  discovery, logging, and other purposes.
