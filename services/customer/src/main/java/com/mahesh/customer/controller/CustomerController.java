@@ -1,6 +1,7 @@
 package com.mahesh.customer.controller;
 
 import com.mahesh.customer.dto.CustomerRequest;
+import com.mahesh.customer.dto.CustomerResponse;
 import com.mahesh.customer.entity.Customer;
 import com.mahesh.customer.repository.CustomerRepository;
 import com.mahesh.customer.service.CustomerService;
@@ -35,6 +36,21 @@ public class CustomerController {
 
         return ResponseEntity.ok(service.getAllCustomers());
 
+    }
+
+    @PutMapping
+    public ResponseEntity<Customer> updateCustomer(@RequestBody @Valid CustomerRequest request){
+        return ResponseEntity.ok(service.updateCustomer(request));
+    }
+
+    @GetMapping("/{id}")
+    public  ResponseEntity<CustomerResponse> findCustomer(@PathVariable("id") String id){
+        return ResponseEntity.ok(service.findById(id));
+    }
+
+    @DeleteMapping("/{id}")
+    public  ResponseEntity<String> deleteCustomer(@PathVariable("id") @Valid String id){
+        return ResponseEntity.ok(service.deleteCustomer(id));
     }
 
 

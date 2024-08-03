@@ -8,11 +8,17 @@
         <option value="$PROJECT_DIR$/services/config-server/pom.xml" />
         <option value="$PROJECT_DIR$/services/discovery/pom.xml" />
         <option value="$PROJECT_DIR$/services/customer/pom.xml" />
+        <option value="$PROJECT_DIR$/services/product/pom.xml" />
+        <option value="$PROJECT_DIR$/services/discovery-updated/pom.xml" />
+        <option value="$PROJECT_DIR$/services/product-updated/pom.xml" />
+        <option value="$PROJECT_DIR$/services/order-service/pom.xml" />
+        <option value="$PROJECT_DIR$/services/order/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
       <set>
         <option value="$USER_HOME$/Downloads/config-server/config-server/pom.xml" />
+        <option value="$PROJECT_DIR$/services/discovery-updated/pom.xml" />
       </set>
     </option>
   </component>
