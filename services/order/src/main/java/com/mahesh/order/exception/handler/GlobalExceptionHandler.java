@@ -1,8 +1,6 @@
 package com.mahesh.order.exception.handler;
 
 import com.mahesh.order.exception.BusinessException;
-import com.mahesh.product.exception.FourNotFour;
-import com.mahesh.product.exception.ProductAlreadyExistException;
 import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -18,9 +16,9 @@ import java.util.stream.Collectors;
 public class GlobalExceptionHandler {
 
     @ExceptionHandler({BusinessException.class})
-    public ResponseEntity<String> handleProductException(ProductAlreadyExistException exception){
+    public ResponseEntity<String> handleProductException(BusinessException exception){
         return ResponseEntity.status((HttpStatus.ALREADY_REPORTED))
-                .body(exception.getErrorMessage());
+                .body(exception.getMsg());
     }
 
     @ExceptionHandler(EntityNotFoundException.class)
