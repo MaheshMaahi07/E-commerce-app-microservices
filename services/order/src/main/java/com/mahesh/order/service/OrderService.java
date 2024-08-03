@@ -9,6 +9,8 @@ import com.mahesh.order.kafka.OrderConfirmation;
 import com.mahesh.order.kafka.OrderProducer;
 import com.mahesh.order.mapper.OrderMapper;
 import com.mahesh.order.orderline.OrderLineRequest;
+import com.mahesh.order.payment.PaymentClient;
+import com.mahesh.order.payment.PaymentRequest;
 import com.mahesh.order.product.ProductClient;
 import com.mahesh.order.product.PurchaseRequest;
 import com.mahesh.order.repository.OrderRepository;
@@ -35,6 +37,8 @@ public class OrderService {
 
     private final OrderProducer orderProducer;
 
+    private final PaymentClient paymentClient;
+
 
     public Order createOrder(OrderRequest request) {
         //check the customer is exist->openFeign
@@ -60,6 +64,15 @@ public class OrderService {
         }
 
         //start payment process
+        var paymentRequest=new PaymentRequest(
+                request.amount(),
+                request.paymentMethod(),
+                request.id(),
+                request.reference(),
+                customer
+        );
+        paymentClient.requestOrderPayment(paymentRequest);
+
 
         //send the order confirmation -->notification-ms (Kafka)
         orderProducer.sendOrderConfirmation(new

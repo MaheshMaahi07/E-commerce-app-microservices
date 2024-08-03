@@ -30,10 +30,7 @@ create database order;]]></console>
     <last-used-providers />
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
-    <open-files>
-      <object connection-id="4e4b70ee-8099-4f90-acca-161311dfa8e4" object-ref="consoles/Connection" />
-      <object connection-id="8a56a7f8-403f-47d4-a122-fc3e13a7d1e7" object-ref="consoles/Connection" />
-    </open-files>
+    <open-files />
   </component>
   <component name="DBNavigator.Project.DatabaseSessionManager">
     <connection id="4e4b70ee-8099-4f90-acca-161311dfa8e4">
